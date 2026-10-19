@@ -109,6 +109,14 @@
 - **Evidence:** Cell 5 OOF benchmark table.
 - **Revisit when:** Family 3 (GBDT) and Family 4 (Kernel/SVM) models are benchmarked.
 
+### D-008 — Data Harmonization Strategy (Option B)
+
+- **Chosen:** Pursue Option B (Dual-Real Harmonization: UCI Caracas + CDC NHANES real patient datasets). Exclude purely synthetic generation from primary evaluation.
+- **Alternatives considered:** Total naive merge of synthetic data (Option A), Pre-training prior transfer (Option C).
+- **Why:** Guarantees 100% genuine biological data from actual human subjects; aligns features (`Age`, `Pregnancies`, `Smokes`, `Oral_Contraceptives`, `First_Sex_Age`, `Partners`) while maintaining honest clinical ground-truth.
+- **Evidence:** Documented in `sumber.md` with complete URLs, cycle identifiers, and feature alignment mapping.
+- **Revisit when:** Cross-domain validation results are analyzed.
+
 ## Evidence Ledger
 
 | ID | Claim or Result | Value | Evidence Source | Evaluation Context | Status |
@@ -142,7 +150,9 @@ NOT APPLICABLE (No models trained yet).
 
 | Artifact | Purpose | Validation Status |
 |---|---|---|
-| cervical-cancer_csv.csv | Raw tabular input data | NOT VALIDATED |
+| cervical-cancer_csv.csv | Raw tabular input data | PASSED |
+| cervical-cancer-notebook.ipynb | Primary notebook with Cells 1-5 | PASSED |
+| sumber.md | Comprehensive data source inventory and harmonization map | PASSED |
 
 ## Operational Monitoring
 
