@@ -108,7 +108,6 @@ NOT APPLICABLE (Dataset preparation phase).
 | master_cervical_cancer.ipynb | Primary notebook with Cells 1-3 | PASSED |
 | cervical-cancer-notebook2.ipynb | Teammate modeling notebook with Cells 1-15 (Ablation & Champion Ensemble) | PASSED |
 | scripts/build_harmonized_dataset.py | Reproducible download and ETL script | PASSED |
-| scripts/run_corpus_enhancements.py | Automated enhancement execution script | PASSED |
 | sumber.md | Comprehensive data source inventory and harmonization map | PASSED |
 
 ## Operational Monitoring
