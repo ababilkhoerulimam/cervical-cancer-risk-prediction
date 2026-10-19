@@ -27,7 +27,10 @@
 
 | Source | Metadata / Grain | Time Coverage | Sensitivity | Exploration Status |
 |---|---|---|---|---|
-| cervical-cancer_csv.csv | 94 KB, patient record grain | Unknown | Public / De-identified | NOT OPENED |
+| cervical-cancer_csv.csv | 94 KB, patient record grain (835 rows, 36 cols) | 2017 (Caracas) | Public / De-identified | CELL 1-5 |
+| data/uci_cervical_cancer_858.csv | 100 KB, full official UCI dataset (858 rows, 36 cols) | 2017 (Caracas) | Public / De-identified | ACQUIRED |
+| data/nhanes_cervical_harmonized.csv | 101 KB, CDC NHANES 2015-2016 females (2,709 rows, 8 cols) | 2015-2016 (US) | Public / De-identified | HARMONIZED |
+| data/harmonized_master_real.csv | 136 KB, combined real patient master (3,567 rows, 8 cols) | Multi-center | Public / De-identified | HARMONIZED |
 
 ## Progress
 
@@ -150,9 +153,14 @@ NOT APPLICABLE (No models trained yet).
 
 | Artifact | Purpose | Validation Status |
 |---|---|---|
-| cervical-cancer_csv.csv | Raw tabular input data | PASSED |
-| cervical-cancer-notebook.ipynb | Primary notebook with Cells 1-5 | PASSED |
+| cervical-cancer_csv.csv | Raw tabular input data (835 rows) | PASSED |
+| cervical-cancer-notebook.ipynb | Primary notebook with executed Cells 1-5 outputs | PASSED |
 | sumber.md | Comprehensive data source inventory and harmonization map | PASSED |
+| data/uci_cervical_cancer_858.csv | Full official UCI 383 dataset (858 rows) | PASSED |
+| data/nhanes_cervical_harmonized.csv | Standardized CDC NHANES real cohort (2,709 rows) | PASSED |
+| data/uci_cervical_harmonized.csv | Standardized UCI Caracas cohort (858 rows) | PASSED |
+| data/harmonized_master_real.csv | Master merged real dataset (3,567 rows, 75 positives) | PASSED |
+| scripts/build_harmonized_dataset.py | Reproducible download and ETL script | PASSED |
 
 ## Operational Monitoring
 
