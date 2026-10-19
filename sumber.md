@@ -13,9 +13,8 @@ Dokumen ini mencatat inventaris resmi sumber data yang digunakan, dipetakan, dan
 * **Mirror Kaggle:** [Kaggle - Cervical Cancer Risk Classification (loveall)](https://www.kaggle.com/datasets/loveall/cervical-cancer-risk-classification)
 * **Karakteristik Data:**
   * **Populasi:** Pasien rawat jalan ginekologi di Hospital Universitario de Caracas, Venezuela.
-  * **Ukuran Asli:** 858 observasi, 36 atribut.
-  * **Ukuran File Lokal di Repo (`cervical-cancer_csv.csv`):** 835 observasi (setelah pembersihan baris duplikat/inkonsisten oleh uploader awal).
-  * **Target Klinis Definitif:** `Biopsy` (histopatologi jaringan serviks: 54 positif / 835 total = 6.47%).
+  * **Ukuran Data:** 858 observasi (data resmi UCI utuh di `data/uci_cervical_cancer_858.csv`), 36 atribut.
+  * **Target Klinis Definitif:** `Biopsy` (histopatologi jaringan serviks: 55 positif / 858 total = 6.41%).
   * **Target Diagnostik Menengah (Dibuang untuk mencegah kebocoran klinis):** `Hinselmann` (kolposkopi), `Schiller` (uji iodine Lugol), `Citology` (Pap smear).
   * **Fitur Gaya Hidup Utama:** `Age`, `Number of sexual partners`, `First sexual intercourse`, `Num of pregnancies`, `Smokes (years, packs/year)`, `Hormonal Contraceptives (years)`, `IUD (years)`, riwayat `STDs` (kondiloma, herpes, HIV, HPV, sifilis).
 * **Sitasi Akademik:**

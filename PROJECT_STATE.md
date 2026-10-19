@@ -6,7 +6,7 @@
 **Current phase:** Harmonized Master Dataset Exported (Option 3 Complete)
 **Project type:** PREDICTIVE
 **Decision owner:** User
-**Primary notebook:** master_cervical_cancer.ipynb
+**Primary notebook:** notebooks/01_data_harmonization.ipynb
 **Last completed cell:** Cell 3
 **Data snapshot:** data/harmonized_master_real.csv (3,567 rows, 8 cols)
 **Code version:** b410b97
@@ -67,7 +67,7 @@
 - **Chosen:** Incorporate domain exposure interactions (`years_active`, `partner_rate`, `smoke_hormone`), missing indicator flags (`_isna`), and Tri-Family Ensemble (`RF_Unw_FE` + `RF_Bal_d3_FE` + `CatBoost_Auto_FE`) with F2 cost-sensitive medical thresholding.
 - **Alternatives considered:** Naive 2-model blend without feature engineering (PR-AUC 0.1048).
 - **Why:** Domain interactions capture biological HPV exposure duration and smoking/hormone synergy; missing flags prevent information loss from structured survey missingness; tri-family blending combines bagging, shallow tree, and symmetric GBDT to achieve new peak PR-AUC 0.1111.
-- **Evidence:** Cells 13-15 in cervical-cancer-notebook2.ipynb.
+- **Evidence:** Cells 13-15 in notebooks/02_model_ablation_ensemble.ipynb.
 - **Revisit when:** External clinical validation cohort becomes available.
 
 ## Evidence Ledger
@@ -78,7 +78,7 @@
 | E-002 | Harmonized raw profile audit | total_rows=3567, UCI pos=55 (6.41%), NHANES pos=20 (0.74%), top missing: pregnancies (850), partners (791) | Cell 1 | DESCRIPTIVE | OBSERVED |
 | E-003 | Pre-baked Stratified 5-Fold balance | 5 folds, exactly 15 positives per fold (~713 samples/fold) | Cell 2 | CV | OBSERVED |
 | E-004 | Master Cleaned QA export | 3,567 rows, 16 cols (6 DA, 8 MLE, 2 ID/source), target=75, file=319 KB | Cell 3 | EXPORT_QA | PASSED |
-| E-005 | Enhanced Tri-Family Champion Ensemble OOF | RF_Unw_FE + RF_Bal_d3_FE + CatBoost_Auto_FE: PR-AUC 0.1111, ROC-AUC 0.7682, F2-Threshold 0.4547 (Recall 48.0%) | Cell 15 | CV | OBSERVED |
+| E-005 | Enhanced Tri-Family Champion Ensemble OOF | RF_Unw_FE + RF_Bal_d3_FE + CatBoost_Auto_FE: PR-AUC 0.1111, ROC-AUC 0.7682, F2-Threshold 0.4547 (Recall 48.0%) | notebooks/02_model_ablation_ensemble.ipynb | CV | OBSERVED |
 
 ## Methodology Design
 
@@ -105,9 +105,10 @@ NOT APPLICABLE (Dataset preparation phase).
 | data/uci_cervical_harmonized.csv | Standardized UCI Caracas cohort (858 rows) | PASSED |
 | data/harmonized_master_real.csv | Master merged real dataset (3,567 rows, 75 positives) | PASSED |
 | data/cervical_cancer_master_cleaned.csv | Dual-purpose master dataset (DA & MLE ready, 3,567 rows, 16 cols) | PASSED |
-| master_cervical_cancer.ipynb | Primary notebook with Cells 1-3 | PASSED |
-| cervical-cancer-notebook2.ipynb | Teammate modeling notebook with Cells 1-15 (Ablation & Champion Ensemble) | PASSED |
+| notebooks/01_data_harmonization.ipynb | Data harmonization notebook (Cells 1-3) | PASSED |
+| notebooks/02_model_ablation_ensemble.ipynb | Multi-family ablation & champion ensemble notebook (Cells 1-15) | PASSED |
 | scripts/build_harmonized_dataset.py | Reproducible download and ETL script | PASSED |
+| requirements.txt | Python package dependencies specification | PASSED |
 | sumber.md | Comprehensive data source inventory and harmonization map | PASSED |
 
 ## Operational Monitoring
